@@ -9,5 +9,5 @@ function linear_search($data, $needle)
     }
   }
 
-  return -1;
+  return false;
 }

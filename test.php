@@ -20,6 +20,6 @@ class linearSearchTest extends PHPUnit_Framework_TestCase
 
   public function test_not_found()
   {
-    $this->assertEquals(-1, linear_search($this->_data, 123));
+    $this->assertEquals(false, linear_search($this->_data, 123));
   }
 }
