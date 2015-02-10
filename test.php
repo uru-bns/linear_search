@@ -2,9 +2,24 @@
 
 require_once('./linear_search.php');
 
-$data = [10, 1, -1, 5, 3, 8, 0];
+class linearSearchTest extends PHPUnit_Framework_TestCase
+{
+  private $_data;
 
-var_dump(linear_search($data, -1) == 2);
-var_dump(linear_search($data, 10) == 0);
-var_dump(linear_search($data, 0) == 6);
-var_dump(linear_search($data, 123) == -1);
+  public function setUp()
+  {
+    $this->_data = [10, 1, -1, 5, 3, 8, 0];
+  }
+
+  public function test_found()
+  {
+    $this->assertEquals(2, linear_search($this->_data, -1));
+    $this->assertEquals(0, linear_search($this->_data, 10));
+    $this->assertEquals(6, linear_search($this->_data, 0));
+  }
+
+  public function test_not_found()
+  {
+    $this->assertEquals(-1, linear_search($this->_data, 123));
+  }
+}
